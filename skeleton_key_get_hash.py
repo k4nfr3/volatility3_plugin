@@ -28,7 +28,7 @@ class SkeletonKeyGetHash(interfaces.plugins.PluginInterface):
         return [
             requirements.ModuleRequirement(name = 'kernel', description = 'Windows kernel',
                                                      architectures = ["Intel32", "Intel64"]),
-            requirements.URIRequirement(name = "yara_file", default= "skeleton.yara", description = "Yara rules (as a file)", optional = True),
+            requirements.URIRequirement(name = "yara_file", default= "volatility3/framework/plugins/windows/skeleton.yara", description = "Yara rules (as a file)", optional = True),
             # This additional requirement is to follow suit with upstream, who feel that compiled rules could potentially be used to execute malicious code
             # As such, there's a separate option to run compiled files, as happened with yara-3.9 and later
             requirements.PluginRequirement(name = 'pslist', plugin = pslist.PsList, version = (2, 0, 0)),
